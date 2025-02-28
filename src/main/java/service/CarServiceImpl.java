@@ -26,13 +26,13 @@ public class CarServiceImpl implements CarService {
     public void removeCar(Car car) {
         cars.remove(car);
     }   
-
-    @Override
-    public List<Car> getCars(int count) {
-        if(count >= cars.size()){
-            return cars;
-        } else {
-            return new ArrayList<>(cars.subList(0, count));
-        }
-    }
+    
+  @Override
+  public List<Car> getCars(Integer count) {
+    if (count == null || count >= cars.size()) {
+        return cars;
+    } else {
+        return new ArrayList<>(cars.subList(0, count));
+      }
+   }
 }
